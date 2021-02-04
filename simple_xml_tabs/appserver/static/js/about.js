@@ -21,16 +21,15 @@
  */
 require(['jquery', 'underscore', 'splunkjs/mvc', "splunkjs/mvc/utils"],
     function ($, _, mvc, utils) {
-        require(["/static/app/simple_xml_tabs/js/markdown.js"], function (md) {
+        require(["/static/app/simple_xml_tabs/js/node_modules/markdown/lib/markdown.js"], function (md) {
             if (typeof(markdown) != "undefined") {
                 $.get("/static/app/simple_xml_tabs/html/README.md", {"ts": $.now()}, function (data) {
-                    var _build_links = function (ele) {
-                        for (var k = 0; k < ele.length; k++) {
-                            var el = ele[k];
-                            var linkage = $(el + ":contains('::')");
-                            for (var i = 0; i < linkage.length; i++) {
-                                console.log(linkage[i]);
-                                var elem = $(linkage[i]), txt = elem.text().replace(/::(.*?)::/g, function (s, match) {
+                    let _build_links = function (ele) {
+                        for (let k = 0; k < ele.length; k++) {
+                            let el = ele[k];
+                            let linkage = $(el + ":contains('::')");
+                            for (let i = 0; i < linkage.length; i++) {
+                                let elem = $(linkage[i]), txt = elem.text().replace(/::(.*?)::/g, function (s, match) {
                                     return "<a name=\"" + match + "\"></a>";
                                 });
                                 elem.text("");
