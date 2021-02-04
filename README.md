@@ -22,6 +22,6 @@ Concepts Covered:
 
 Instructions:
 
-1. Make sure ``yarn`` or ``npm`` is installed on the local system.
+1. Make sure ``yarn`` is installed on the local system.
 1. Execute ``build.sh simple_xml_tabs`` to setup the extension dependencies and build the package
 1. Use the package in an install of Splunk, or execute ``docker-compse up -d tabbedcontent`` to start the local docker.
