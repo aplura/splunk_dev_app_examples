@@ -27,7 +27,7 @@ jobs:
       - name: Build Simple XML Tabs
         run: ./build.sh simple_xml_tabs
       - name: Upload output file
-          uses: actions/upload-artifact@v1
-          with:
-            name: simple_xml_tabs
-            path: simple_xml_tabs.tgz
+        uses: actions/upload-artifact@v1
+        with:
+          name: simple_xml_tabs
+          path: simple_xml_tabs.tgz
