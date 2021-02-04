@@ -1,0 +1,23 @@
+<form script="js/tabs.js">
+  <label>Tabbed Content</label>
+  <row id="tabs">
+    <panel>
+      <html>
+        <ul id="tabs" class="nav nav-tabs">
+          <li class="active">
+            <a href="#" class="toggle-tab" data-toggle="tab" data-elements="internal_row_1">Metrics</a>
+          </li>
+          <li>
+            <a href="#" class="toggle-tab" data-toggle="tab" data-elements="internal_row_2">UI Logins</a>
+          </li>
+        </ul>
+      </html>
+    </panel>
+  </row>
+  <row id="internal_row_1">
+
+  </row>
+  <row id="internal_row_2">
+
+  </row>
+</form>
