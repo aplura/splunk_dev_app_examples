@@ -1,0 +1,5 @@
+*.tgz
+*.lock
+node_modules
+.idea/
+*.spl
