@@ -1,0 +1,10 @@
+<form script="js/react_bootstrap.js">
+  <label>React Content</label>
+  <row>
+    <panel>
+      <html>
+        <div id="react-app" />
+      </html>
+    </panel>
+  </row>
+</form>
