@@ -1,4 +1,4 @@
-<form script="js/main.js">
+<form script="react/main_bootstrap.js">
   <label>React Content</label>
   <row>
     <panel>

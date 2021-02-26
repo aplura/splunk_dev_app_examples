@@ -86,15 +86,15 @@ module.exports = {
     output: {
         globalObject: 'this',
         filename: '[name].js', // change this to '[name].[contenthash:8].js' if using the asset manifest for better caching
-        path: path.join(__dirname, '../js'),
-        publicPath: `/static/app/${app_name}/js`,
+        path: path.join(__dirname, '../react'),
+        publicPath: `/static/app/${app_name}/react`,
         library: 'main',
         libraryTarget: 'umd',
     },
     //devtool: 'inline-source-map',
     mode: mode,
     optimization: {
-        namedModules: true,
+        moduleIds: "named",
         minimize: true,
         chunkIds: 'named'
     },
@@ -120,8 +120,8 @@ module.exports = {
                     }
                 ],
             },
-            {test: /\.scss?$/, exclude: /node_modules/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
-            {test: /\.css?$/, loaders: ['style-loader', 'css-loader']},
+            {test: /\.scss?$/, exclude: /node_modules/, use: ['style-loader', 'css-loader', 'sass-loader']},
+            {test: /\.css?$/, use: ['style-loader', 'css-loader']},
         ],
     },
     plugins: [
@@ -130,9 +130,9 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new requirejsPlugin({
-            path: path.join(__dirname, '../js'),
-            filename: 'db_main.js',
-            pathUrl: `/static/app/${app_name}/js/`,
+            path: path.join(__dirname, '../react'),
+            filename: 'main_bootstrap.js',
+            pathUrl: `/static/app/${app_name}/react/`,
             processOutput: (assets) => {
                 return po(assets, "main", "main", "react-app")
             }
