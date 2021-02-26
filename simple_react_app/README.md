@@ -1,0 +1,3 @@
+# Simple Native React
+
+So you were thinking about React Native the other daayy......

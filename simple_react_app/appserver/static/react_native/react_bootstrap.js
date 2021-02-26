@@ -1,8 +1,8 @@
 require.config({
     "paths": {
-        "app": "/static/app/simple_react_app/js/app.js?v=7db57c120d80baeda5b5",
-        "react": "/static/app/simple_react_app/js/react.js?v=90c61273bd8d177b96e2",
-        "react-dom": "/static/app/simple_react_app/js/react-dom.js?v=2a7a3c86b3aaab49d302"
+        "app": "/static/app/simple_react_app/js/src/App.js?v=7db57c120d80baeda5b5",
+        "react": "/static/app/simple_react_app/js/node_modules/react/umd/react.production.min.js?v=90c61273bd8d177b96e2",
+        "react-dom": "/static/app/simple_react_app/js/node_modules/react-dom/umd/react-dom.production.min.js?v=2a7a3c86b3aaab49d302"
     },
     "shim": {
         "app": {"exports": ["app"]},
@@ -14,7 +14,7 @@ require([
     "splunkjs/ready!",
     "splunkjs/mvc/simplexml/ready!",
     "splunkjs/mvc/utils",
-    "configuration", "react", "react-dom", "backbone"
+    "app", "react", "react-dom", "backbone"
 ], function (mvc,
              ignored,
              splunkjsUtils,
