@@ -25,3 +25,19 @@ Instructions:
 1. Make sure ``yarn`` is installed on the local system.
 1. Execute ``build.sh simple_xml_tabs`` to setup the extension dependencies and build the package
 1. Use the package in an install of Splunk, or execute ``docker-compose up -d tabbedcontent`` to start the local docker.
+
+## React Native Dashboards
+
+This extension demonstrates the ability to use native react in a dashboard.
+
+Concepts Covered:
+
+1. Simple XML and Javascript Hooks
+1. Using an external third-party node library via Simple XML and JS Hooks
+1. Webpack and React Native transpiling via babel to inject into Simple XML Dashboards
+
+Instructions:
+
+1. Make sure ``yarn`` is installed on the local system.
+1. Follow the instructions at `simple_react_app/README.md` to setup and build the react hooks.
+1. Use the package in an install of Splunk, or execute ``docker-compose up -d reactcontent`` to start the local docker.
