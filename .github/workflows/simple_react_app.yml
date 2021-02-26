@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build-simple-xml-tabs:
+  build-simple-react-app:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -25,9 +25,9 @@ jobs:
       - uses: actions/checkout@v2
       # Runs a single command using the runners shell
       - name: Build Simple XML Tabs
-        run: ./build.sh simple_xml_tabs
+        run: ./build.sh simple_react_app
       - name: Upload output file
         uses: actions/upload-artifact@v1
         with:
-          name: simple_xml_tabs
-          path: simple_xml_tabs.tgz
+          name: simple_react_app
+          path: simple_react_app.tgz
