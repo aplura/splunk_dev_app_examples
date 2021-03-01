@@ -32,5 +32,21 @@ services:
       splunk:
         aliases:
           - "splunksh"
+  kvstoreeditor:
+    image: splunk/splunk
+    container_name: spl_kvstore_editor
+    ports:
+      - "8000:8000"
+      - "8089:8089"
+    environment:
+      OPTIMISTIC_ABOUT_FILE_LOCKING: '1'
+      SPLUNK_START_ARGS: '--accept-license'
+      SPLUNK_PASSWORD: "c3c76668-47be-42b7-9886-0201dcdb8e52"
+    volumes:
+      - ./kvstore_editor_react:/opt/splunk/etc/apps/kvstore_editor_react
+    networks:
+      splunk:
+        aliases:
+          - "splunksh"
 networks:
   splunk:

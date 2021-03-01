@@ -1,0 +1,10 @@
+<form script="js/about.js">
+  <label>About React Content</label>
+  <row>
+    <panel>
+      <html>
+        <div class="markdown_container"/>
+      </html>
+    </panel>
+  </row>
+</form>
