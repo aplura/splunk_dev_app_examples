@@ -3,7 +3,8 @@
   <row>
     <panel>
       <html>
-        <div id="kvstore_editor" data-kvstore="kvstore_react" data-columns="company_name,company_id,is_company,employee_count"/>
+        <div class="kvstore_editor" data-kvstore="kvstore_react" data-columns="company_name,company_id,is_company,employee_count"/>
+        <div class="kvstore_editor" data-kvstore="kvstore_react"/>
       </html>
     </panel>
   </row>

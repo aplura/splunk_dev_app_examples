@@ -58,8 +58,7 @@ const po = (assets, entry_file, entry_file_object, entry_object) => {
                                  ${require_named_objects.join(", ").replace(/"/g, "")}
                     ) {
                     
-                    let myObjects = $("#${entry_object}").each((k, v)=>{
-                    console.log({k:k, v:v});
+                    let myObjects = $(".${entry_object}").each((k, v)=>{
                         reactdom.render(
                         react.createElement(${entry_file_object.replace(/[^a-zA-Z]/g, "")}.default, {
                             splunk: mvc,

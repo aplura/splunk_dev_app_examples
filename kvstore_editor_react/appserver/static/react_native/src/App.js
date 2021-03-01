@@ -37,7 +37,7 @@ const tableIcons = {
 };
 const validators = {
     number: (field, value) => {
-        if (validator.isEmpty(value)){
+        if (validator.isEmpty(value)) {
             return {helperText: `${field} is empty`, isValid: false};
         }
         if (!validator.isFloat(value) || !validator.isInt(value)) {
@@ -46,7 +46,7 @@ const validators = {
         return true
     },
     bool: (field, value) => {
-        if (validator.isEmpty(value)){
+        if (validator.isEmpty(value)) {
             return {helperText: `${field} is empty`, isValid: false};
         }
         if (!validator.isBoolean(value)) {
@@ -55,7 +55,7 @@ const validators = {
         return true
     },
     string: (field, value) => {
-        if (validator.isEmpty(value)){
+        if (validator.isEmpty(value)) {
             return {helperText: `${field} is empty`, isValid: false};
         }
         if (!validator.isAscii(value)) {
@@ -64,7 +64,7 @@ const validators = {
         return true
     },
     time: (field, value) => {
-        if (validator.isEmpty(value)){
+        if (validator.isEmpty(value)) {
             return {helperText: `${field} is empty`, isValid: false};
         }
         if (!validator.isDate(value)) {
@@ -99,7 +99,6 @@ class App extends React.Component {
         return new Promise((resolve, reject) => {
             this.props.splunk.get(`storage/collections/data/${this.props.kvstore}`).then((d) => {
                 let clear = JSON.parse(d);
-                console.log({"action": "get_data", ...clear});
                 resolve(clear);
             })
         });
@@ -202,6 +201,12 @@ class App extends React.Component {
 
     render() {
         let self = this;
+        if (self.state.columns.length < 3) {
+            return (<div>
+                <h1>Table for {self.props.kvstore}</h1>
+                <blockquote>Must define at least one column in <i>data-columns</i> attribute.</blockquote>
+            </div>)
+        }
         return (
             <div className={"panel-element-row"}>
                 <MaterialTable
@@ -242,13 +247,13 @@ class App extends React.Component {
                                     /* setData([...data, newData]); */
                                     let items = this.state.data, keyed = {}, change_items = [];
                                     Object.keys(changes).map((l) => {
-                                            keyed[changes[l]["oldData"]["_key"]] = {...changes[l]["oldData"], ...changes[l]["newData"]};
-                                            change_items.push(keyed[changes[l]["oldData"]["_key"]]);
-                                            return l;
+                                        keyed[changes[l]["oldData"]["_key"]] = {...changes[l]["oldData"], ...changes[l]["newData"]};
+                                        change_items.push(keyed[changes[l]["oldData"]["_key"]]);
+                                        return l;
                                     })
                                     let keys = Object.keys(keyed);
                                     let updatedItems = items.map((k) => {
-                                        if (keys.includes(k["_key"])){
+                                        if (keys.includes(k["_key"])) {
                                             return keyed[k["_key"]];
                                         } else {
                                             return k;
